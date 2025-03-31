@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos</title>
+    <style>
+        @font-face {
+            font-family: 'Osake'; /* Nombre de la fuente */
+            src: url('Osake.otf') format('opentype'); /* Ruta al archivo de la fuente */
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            background-image: url('pguiada.jpg'); /* Restaura solo la imagen de fondo original */
+            background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            font-family: 'Osake', sans-serif; /* Aplica la fuente personalizada */
+        }
+        .red-button {
+            background-color: #d72631; /* Rojo japonés tradicional */
+            color: #fff4e6; /* Blanco cálido */
+            border: 2px solid #1b1b1e; /* Negro tradicional */
+            padding: 20px 30px;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            font-family: 'Osake', sans-serif; /* Aplica la fuente personalizada */
+            border-radius: 5px; /* Bordes redondeados */
+            white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+        }
+        .red-button:hover {
+            background-color: #a71d24; /* Rojo más oscuro al pasar el cursor */
+            color: #ffffff; /* Blanco puro */
+        }
+        iframe {
+            width: 70%; /* Ocupa el 70% del ancho */
+            height: 100%; /* Ocupa toda la altura disponible */
+            border: none;
+        }
+        .container {
+            display: flex; /* Crea un diseño de dos columnas */
+            height: 100vh; /* Ocupa toda la altura de la ventana */
+        }
+        .buttons {
+            width: 30%; /* Ocupa el 30% del ancho */
+            display: flex;
+            flex-direction: column; /* Apila los botones verticalmente */
+            align-items: flex-start; /* Alinea los botones a la izquierda */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        h1 {
+            font-size: 42px; /* Aumenta más el tamaño del título */
+        }
+    </style>
+    <script>
+        function togglePDF(pdf) {
+            const iframe = document.getElementById('pdf-viewer');
+            const currentSrc = decodeURIComponent(iframe.src); // Decodifica espacios y caracteres especiales
+            if (currentSrc.endsWith(pdf)) {
+                iframe.src = ''; // Cierra el PDF si ya está abierto
+            } else {
+                iframe.src = encodeURIComponent(pdf); // Abre el PDF seleccionado
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="buttons">
+            <h1>Proyectos</h1>
+            <button class="red-button" onclick="togglePDF('ResumenUser.pdf')">Usuarios y Grupos</button>
+            <button class="red-button" onclick="togglePDF('Directorios y Archivos.pdf')">Directorios y Archivos</button>
+            <button class="red-button" onclick="togglePDF('Sostenibilidad.pdf')">Abrir PDF 3</button>
+            <button class="red-button" onclick="togglePDF('Proyecto4.pdf')">Proyecto 4</button>
+            <button class="red-button" onclick="togglePDF('Proyecto5.pdf')">Proyecto 5</button>
+            <button class="red-button" onclick="togglePDF('Proyecto6.pdf')">Proyecto 6</button>
+            <button class="red-button" onclick="togglePDF('Proyecto7.pdf')">Proyecto 7</button>
+            <button class="red-button" onclick="togglePDF('Proyecto8.pdf')">Proyecto 8</button>
+            <button class="red-button" onclick="togglePDF('Proyecto9.pdf')">Proyecto 9</button>
+            <button class="red-button" onclick="togglePDF('Proyecto10.pdf')">Proyecto 10</button>
+            <button class="red-button" onclick="togglePDF('Proyecto11.pdf')">Proyecto 11</button>
+            <button class="red-button" onclick="togglePDF('Proyecto12.pdf')">Proyecto 12</button>
+            <button class="red-button" onclick="togglePDF('Proyecto13.pdf')">Proyecto 13</button>
+        </div>
+        <iframe id="pdf-viewer" src=""></iframe>
+    </div>
+</body>
+
+</html>
